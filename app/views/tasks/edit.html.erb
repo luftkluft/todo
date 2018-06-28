@@ -1,0 +1,12 @@
+<div class="task-form">
+
+  <div class="task-header">
+    <h2><%= t('task.edit') %></h2>
+  </div>
+
+  <div class="task-block">
+    <%= render 'form', task: @task, id: params[:id] %>
+    <%= link_to t('task.back'), root_path %>
+  </div>
+  
+</div>

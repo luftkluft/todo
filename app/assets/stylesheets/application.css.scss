@@ -1,0 +1,217 @@
+/*
+ * require_tree .
+ * require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.grad {
+  background: rgba(217, 217, 217, 1);
+  background: -moz-linear-gradient(top, rgba(217, 217, 217, 1) 0%, rgba(217, 217, 217, 1) 44%, rgba(166, 127, 36, 1) 54%, rgba(148, 116, 56, 1) 57%, rgba(214, 155, 17, 1) 68%, rgba(214, 155, 17, 1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(217, 217, 217, 1)), color-stop(44%, rgba(217, 217, 217, 1)), color-stop(54%, rgba(166, 127, 36, 1)), color-stop(57%, rgba(148, 116, 56, 1)), color-stop(68%, rgba(214, 155, 17, 1)), color-stop(100%, rgba(214, 155, 17, 1)));
+  background: -webkit-linear-gradient(top, rgba(217, 217, 217, 1) 0%, rgba(217, 217, 217, 1) 44%, rgba(166, 127, 36, 1) 54%, rgba(148, 116, 56, 1) 57%, rgba(214, 155, 17, 1) 68%, rgba(214, 155, 17, 1) 100%);
+  background: -o-linear-gradient(top, rgba(217, 217, 217, 1) 0%, rgba(217, 217, 217, 1) 44%, rgba(166, 127, 36, 1) 54%, rgba(148, 116, 56, 1) 57%, rgba(214, 155, 17, 1) 68%, rgba(214, 155, 17, 1) 100%);
+  background: -ms-linear-gradient(top, rgba(217, 217, 217, 1) 0%, rgba(217, 217, 217, 1) 44%, rgba(166, 127, 36, 1) 54%, rgba(148, 116, 56, 1) 57%, rgba(214, 155, 17, 1) 68%, rgba(214, 155, 17, 1) 100%);
+  background: linear-gradient(to bottom, rgba(217, 217, 217, 1) 0%, rgba(217, 217, 217, 1) 44%, rgba(166, 127, 36, 1) 54%, rgba(148, 116, 56, 1) 57%, rgba(214, 155, 17, 1) 68%, rgba(214, 155, 17, 1) 100%);
+  min-height: 100vh;
+
+}
+
+.navbar{
+  //position: fixed; /* Фиксированное положение */
+  left: 0; top: 0;
+  border-radius: 0;
+  width:100%;
+  //min-width: 400px;
+  //max-width: 100%;
+}
+
+body {
+  margin: 0; /* Убираем отступы на странице */
+ }
+
+#footer {
+  position: fixed; /* Фиксированное положение */
+  left: 0; bottom: 0; /* Левый нижний угол */
+  color: #fff; /* Цвет текста */
+  width: 100%; /* Ширина слоя */
+}
+
+#footer div {
+  padding-top: 5px; /* Поля вокруг текста */
+  padding-right: 15px;
+  background: #000; /* Цвет фона */
+}
+
+.new_user, .edit_user {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #FFFFFF;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+input {
+  width:100%;
+}
+
+.navbar_text {
+  background: rgb(80, 80, 80);
+  margin-top: 12px;
+  margin-left: 40px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-radius: 5px;
+  text-align: center;
+  -webkit-text-fill-color: #fff;
+}
+
+.main {
+  //padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.landing-info {
+  text-align: center;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  padding-top: 5px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #FFFFFF;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.text_to_center {
+  text-align: center;
+}
+
+.lists {
+  background-color: rgba(255, 255, 255, 0.0);
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.new_user, .edit_user {
+  width: 50%;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #FFFFFF;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.task-form, .list-form {
+  width: 100%;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #FFFFFF;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+// rg style
+
+table {
+  border-color: rgb(121, 121, 121);
+  border-collapse: collapse;
+}
+
+
+td {
+  border: 1px solid rgb(121, 121, 121);
+  background-color: inherit;
+  border-right: none;
+  border-bottom: none;
+}
+
+.tr_input {
+  background-color: #BBBBBB;
+  td {
+      height: 40px;
+  }
+}
+
+.td_left_none {
+  border-left: none;
+}
+
+tr:hover {
+  background-color: rgba(241, 236, 83, 0.363);
+}
+
+em {
+  display: none;
+}
+
+tr:hover em {
+  display: inline;
+}
+
+.tab_rg {
+  width: 100%;
+  //margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0px 0px 20px 20px;
+  background-color: #FFFAFA;
+  .tr_head {
+      //margin-top: 10px;
+      background: #3172eb;
+      th {
+          height: 45px;
+      }
+  }
+  .tr_body {
+      td {
+          height: 45px;
+      }
+  }
+}
+
+.table_cell {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.left_table_cell {
+  padding: 20px;
+  text-align: left;
+}
+
+.right_table_cell {
+  text-align: right;
+  padding: 20px;
+}
+
+
+a:link {
+  color: gray
+}
+
+a:visited {
+  color: gray
+}
+
+a:hover {
+  color: Tomato;
+  text-decoration: none;
+}

@@ -1,0 +1,207 @@
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/">
+      <strong>Todo</strong>
+    </a>
+      <ul>
+      <p class="navbar_text notice">
+        <%= notice %><%= alert %>
+      </p>
+      </ul>
+  </div>
+  <% if !user_signed_in? %>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li><a href="<%= new_user_registration_path %>"><%= t('devise.registrations.new.sign_up') %></a></li>
+      <li><a href="<%= new_user_session_path %>"><%= t('devise.shared.links.sign_in') %></a></li>
+    </ul>
+  <% else %>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><%= t('navbar.status') %></a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><text id="nav_status"><%= t('navbar.all') %></text><b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#" id="nav_status_all"><%= t('navbar.all') %></a></li>
+          <li><a href="#" id="nav_status_new"><%= t('navbar.new') %></a></li>
+          <li><a href="#" id="nav_status_in_work"><%= t('navbar.in_work') %></a></li>
+          <li><a href="#" id="nav_status_deferred"><%= t('navbar.deferred') %></a></li>
+          <li><a href="#" id="nav_status_completed"><%= t('navbar.completed') %></a></li>
+        </ul>
+      </li>
+      <li><a href="#"><%= t('navbar.lists') %></a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><text id="nav_lists"><%= t('navbar.old_on_top') %></text><b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#" id="nav_lists_new_on_top"><%= t('navbar.new_on_top') %></a></li>
+          <li><a href="#" id="nav_lists_old_on_top"><%= t('navbar.old_on_top') %></a></li>
+          <li><a href="#" id="nav_lists_by_priority"><%= t('navbar.by_priority') %></a></li>
+          <li><a href="#" id="nav_lists_by_name"><%= t('navbar.by_name') %></a></li>
+          <li><a href="#" id="nav_lists_by_deadline"><%= t('navbar.by_deadline') %></a></li>
+        </ul>
+      </li>
+      <li><a href="#"><%= t('navbar.tasks') %></a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><text id="nav_tasks"><%= t('navbar.old_on_top') %></text><b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#" id="nav_tasks_new_on_top"><%= t('navbar.new_on_top') %></a></li>
+          <li><a href="#" id="nav_tasks_old_on_top"><%= t('navbar.old_on_top') %></a></li>
+          <li><a href="#" id="nav_tasks_by_priority"><%= t('navbar.by_priority') %></a></li>
+          <li><a href="#" id="nav_tasks_by_name"><%= t('navbar.by_name') %></a></li>
+          <li><a href="#" id="nav_tasks_by_deadline"><%= t('navbar.by_deadline') %></a></li>
+        </ul>
+      </li>
+      <li>
+        <button type="button" class="btn btn-default navbar-btn"
+           onclick="searchNav();" data-remote="true">
+           <%= t('navbar.search') %>
+        </button>
+      </li>
+      <li class="navbar_text"><%= current_user.first_name %></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><b class="caret"></b></a>
+        <ul class="dropdown-menu">
+
+          <li><%= link_to t('devise.shared.links.account'), edit_user_registration_path, locale: current_user.locale %></li>
+          <li class="divider"></li>
+          <li><%= link_to t('devise.shared.links.sign_out'),
+                  destroy_user_session_path, method: :delete,
+                  :locale => current_user.locale %>
+          </li>
+        </ul>
+      </ul>
+  <% end %>
+</nav>
+
+<script type="text/javascript">
+
+  function searchNav(){
+
+    var str1 = $('#nav_status').text();
+    str1 = str1.split(' ').join('');
+    var str2 = $('#nav_lists').text();
+    str2 = str2.split(' ').join('');
+    var str3 = $('#nav_tasks').text();
+    str3 = str3.split(' ').join('');
+
+    //alert('status='+str1+'lists='+str2+'tasks='+str3);
+
+    $.ajax({
+      cache: false,
+      url: "/sorting",
+      type : 'GET',
+      data: 'status='+str1+';lists='+str2+';tasks='+str3,
+      dataType: 'html',
+
+      success: function(data){
+        $(".lists").html(data);
+      }
+
+    });
+    return false;
+
+  }
+
+  // status
+  $('#nav_status_all').on('click', function () {
+    var str = $(this).text();
+    $('#nav_status').html(str)
+    return false;
+  });
+
+  $('#nav_status_new').on('click', function () {
+    var str = $(this).text();
+    $('#nav_status').html(str)
+    return false;
+  });
+
+  $('#nav_status_in_work').on('click', function () {
+    var str = $(this).text();
+    $('#nav_status').html(str)
+    return false;
+  });
+
+  $('#nav_status_deferred').on('click', function () {
+    var str = $(this).text();
+    $('#nav_status').html(str)
+    return false;
+  });
+
+  $('#nav_status_completed').on('click', function () {
+    var str = $(this).text();
+    $('#nav_status').html(str)
+    return false;
+  });
+  // end status
+
+  // lists
+  $('#nav_lists_new_on_top').on('click', function () {
+    var str = $(this).text();
+    $('#nav_lists').html(str)
+    return false;
+  });
+
+  $('#nav_lists_old_on_top').on('click', function () {
+    var str = $(this).text();
+    $('#nav_lists').html(str)
+    return false;
+  });
+
+  $('#nav_lists_by_priority').on('click', function () {
+    var str = $(this).text();
+    $('#nav_lists').html(str)
+    return false;
+  });
+
+  $('#nav_lists_by_name').on('click', function () {
+    var str = $(this).text();
+    $('#nav_lists').html(str)
+    return false;
+  });
+
+  $('#nav_lists_by_deadline').on('click', function () {
+    var str = $(this).text();
+    $('#nav_lists').html(str)
+    return false;
+  });
+  // end lists
+
+  // tasks
+  $('#nav_tasks_new_on_top').on('click', function () {
+    var str = $(this).text();
+    $('#nav_tasks').html(str)
+    return false;
+  });
+
+  $('#nav_tasks_old_on_top').on('click', function () {
+    var str = $(this).text();
+    $('#nav_tasks').html(str)
+    return false;
+  });
+
+  $('#nav_tasks_by_priority').on('click', function () {
+    var str = $(this).text();
+    $('#nav_tasks').html(str)
+    return false;
+  });
+
+  $('#nav_tasks_by_name').on('click', function () {
+    var str = $(this).text();
+    $('#nav_tasks').html(str)
+    return false;
+  });
+
+  $('#nav_tasks_by_deadline').on('click', function () {
+    var str = $(this).text();
+    $('#nav_tasks').html(str)
+    return false;
+  });
+  // end tasks
+
+
+</script>

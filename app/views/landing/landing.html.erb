@@ -1,0 +1,35 @@
+<%= link_to "English", controller: :landing, action: :change_locale, locale: :en %> |
+<%= link_to "Русский", controller: :landing, action: :change_locale, locale: :ru %>
+<% if user_signed_in? %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2 user-info">
+    </div>
+    <div class="col-sm-8" id="sort-info">
+      <div class="lists">
+      </div>
+    </div>
+    <div class="col-sm-2 list-info">
+    </div>
+  </div>
+</div>
+<% else %>
+<div class="landing-info">
+  <h1><%= t('landing.hello1') %></h1><br>
+  <h3><%= t('landing.hello2') %></h3>
+</div>
+<% end %>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+  //alert('Текст во всплывающем окне');
+      $.ajax({
+        type: "GET",
+        url: '/lists',
+        success: function(data){
+          $(".lists").html(data)
+        }
+      })
+  });
+</script>
+
