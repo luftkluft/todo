@@ -62,19 +62,39 @@ Rails.application.configure do
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "todo_#{Rails.env}"
+#################
+  # config.action_mailer.perform_caching = false
+
+  # config.action_mailer.default_url_options = { host: 'https://todo-luftkluft.herokuapp.com/' }
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  # address:              'smtp.gmail.com',
+  # port:                 587,
+  # domain:               "gmail.com",
+  # user_name:            Rails.application.secrets.user_name,
+  # password:             Rails.application.secrets.user_password,
+  # authentication:       'plain',
+  # enable_starttls_auto: true }
+
+  ##########################
+  config.action_mailer.default_url_options = { host: 'https://todo-luftkluft.herokuapp.com/' }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "gmail.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: "shetar80@gmail.com",
+    password: "gmailshetarshetar",
+    openssl_verify_mode: "none"
+  }
 
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.default_url_options = { host: 'https://todo-luftkluft.herokuapp.com/' }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-  address:              'smtp.gmail.com',
-  port:                 587,
-  domain:               "gmail.com",
-  user_name:            Rails.application.secrets.user_name,
-  password:             Rails.application.secrets.user_password,
-  authentication:       'plain',
-  enable_starttls_auto: true }
+  ##########################
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
