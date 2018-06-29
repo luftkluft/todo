@@ -6,4 +6,7 @@ class Task < ApplicationRecord
     I18n.t('status.completed') => :completed
   }
   belongs_to :list
+
+  validates :content_task, presence: true, length: { in: 1..2000 }
+
 end

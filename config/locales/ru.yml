@@ -72,9 +72,14 @@ ru:
       models:
         user:
           attributes:
+            email:
+              blank: "blank"
             password_confirmation: "confirmation"
         list:
           attributes:
+            title_list:
+              too_short: "too_short"
+              blank: "blank"
             user:
               required: "required"
     attributes:

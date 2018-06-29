@@ -9,6 +9,8 @@ class List < ApplicationRecord
   belongs_to :user
   has_many :tasks, dependent: :destroy
 
+  validates :title_list, presence: true, length: { in: 1..500 }
+
   def self.status(s)
     @ss = s.to_s
 
