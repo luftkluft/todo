@@ -29,6 +29,7 @@
 
   <div class="form-group">
     <%= form.label t('task.priority') %>
+    <% task.priority_task = 1 if task.priority_task.nil? %>
     <%= form.number_field :priority_task, class:"form-control", value: task.priority_task %>
   </div>
 
@@ -44,4 +45,5 @@
   </div>
 
 <% end %>
+
 

@@ -25,6 +25,7 @@
 
   <div class="form-group">
     <%= form.label t('list.priority') %>
+    <% list.priority_list = 1 if list.priority_list.nil? %>
     <%= form.number_field :priority_list, class:"form-control", value: list.priority_list %>
   </div>
 
