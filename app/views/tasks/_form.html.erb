@@ -29,14 +29,14 @@
 
   <div class="form-group">
     <%= form.label t('task.priority') %>
-    <%= form.number_field :priority_task, class:"form-control", value: "1" %>
+    <%= form.number_field :priority_task, class:"form-control", value: task.priority_task %>
   </div>
 
   <div class="form-group">
     <%= form.label t('task.deadline') %>
     <% I18n.locale = 'en' %>
     <%= form.datetime_select :deadline_task, class:"form-control" %>
-    <% I18n.locale = current_user.locale %>
+    <%# I18n.locale = current_user.locale %>
   </div>
 
   <div class="actions">

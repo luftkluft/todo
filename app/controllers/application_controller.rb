@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
       user = User.find(current_user.id)
       {locale: user.locale}
     rescue
-      { locale: I18n.locale }
+      {locale: 'en'}
     end
   end
   

@@ -43,8 +43,10 @@
   <div class="actions">
     <%= f.submit t('.update'), class:"btn btn-primary" %>
   </div>
+<% end %>
 
-    <br>
+<div class="landing-info">
+
     <%= link_to t('devise.shared.links.back'), :root %>
 
   <h3><%= t('.cancel_my_account') %></h3>
@@ -54,6 +56,8 @@
       data: { confirm: t('.are_you_sure') }, method: :delete,
       class:"btn btn-danger" %>
   </p>
-<% end %>
+
+</div>
+
 
 

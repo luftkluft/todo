@@ -104,7 +104,9 @@ class ListsController < ApplicationController
         I18n.locale = user.locale
       rescue
         locale = params[:locale]
-        I18n.locale = locale
+        if locale == ''
+          I18n.locale = 'en'
+        end
       end
     end
 

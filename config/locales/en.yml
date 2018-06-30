@@ -72,6 +72,8 @@ en:
       models:
         user:
           attributes:
+            current_password:
+              blank: "blank"
             email:
               blank: "blank"
             password_confirmation: "confirmation"

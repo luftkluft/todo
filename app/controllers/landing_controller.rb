@@ -8,6 +8,9 @@ class LandingController < ApplicationController
   def change_locale
     begin
       locale = params[:locale]
+      if locale == ''
+        locale = 'en'
+      end
       raise 'unsupported locale' unless ['ru', 'en'].include?(locale)
       User.find(current_user.id).update_attribute(:locale, locale) if current_user && !current_user.blank?
       I18n.locale = locale
