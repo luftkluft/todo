@@ -25,7 +25,11 @@ class TasksController < ApplicationController
   def create
     begin
       @list.tasks.new(task_params).save
-      redirect_to root_path, notice: t('task.created')
+      if task_params[:content_task] == ""
+        redirect_to root_path, notice: t('task.empty')
+      else
+        redirect_to root_path, notice: t('task.created')
+      end
     rescue
       redirect_to root_path, notice: t('task.no_created')
     end

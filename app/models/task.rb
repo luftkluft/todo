@@ -7,6 +7,6 @@ class Task < ApplicationRecord
   }
   belongs_to :list
 
-  validates :content_task, presence: true, length: { in: 1..2000 }
+  validates :content_task, presence: true
 
 end

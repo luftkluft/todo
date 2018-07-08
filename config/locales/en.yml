@@ -38,6 +38,7 @@ en:
     back: "Back"
     create: "Create list"
   task:
+    empty: "The task can not be empty!"
     new_task: "New Task"
     content: "Content"
     status: "Status"
