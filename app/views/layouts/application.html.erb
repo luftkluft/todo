@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Todo</title>
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <meta content="" name="description"/>
-    <meta content="" name="author"/>
+<head>
+  <title>Todo</title>
 
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="" name="description" />
+  <meta content="" name="author" />
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%# javascript_include_tag 'application', 'data-turbolinks-eval' => false %>
-    <%= favicon_link_tag("favicon.ico", alt: "favicon") %>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= favicon_link_tag("favicon.ico", alt: "favicon") %>
 
-  <body>
-    <div class="grad">
+</head>
+
+<body>
+  <div class="grad">
     <%= render "layouts/navigation" %>
     <div class="main">
-    <%= yield %>
+      <%= yield %>
     </div>
     <%= render "layouts/footer" %>
-    </div>
-  </body>
+  </div>
+</body>
 
 </html>
