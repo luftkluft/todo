@@ -1,49 +1,47 @@
 <%= form_with( model: task, id: params[:id], local: true) do |form| %>
 
-  <% if task.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(task.errors.count, "error") %> 
-          prohibited this task from being saved:
-      </h2>
-      <ul>
-        <% task.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<% if task.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(task.errors.count, "error") %>
+    prohibited this task from being saved:
+  </h2>
+  <ul>
+    <% task.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <%= form.text_field :list_id, value: id, type: 'hidden' %>
-  <div class="form-group">
-    <%= form.label t('task.content') %><br>
-     <%= form.text_area :content_task,
+<%= form.text_field :list_id, value: id, type: 'hidden' %>
+<div class="form-group">
+  <%= form.label t('task.content') %><br>
+  <%= form.text_area :content_task,
         autofocus: true,
         placeholder: t('info_list.type'),
         :rows => 5, style: 'width:100%;' %>
-  </div>
+</div>
 
-  <div class="form-group">
-    <%= form.label t('task.status') %><br/>
-    <%= form.select :status, Task::STATUS %>
-  </div>
+<div class="form-group">
+  <%= form.label t('task.status') %><br />
+  <%= form.select :status, Task::STATUS %>
+</div>
 
-  <div class="form-group">
-    <%= form.label t('task.priority') %>
-    <% task.priority_task = 1 if task.priority_task.nil? %>
-    <%= form.number_field :priority_task, class:"form-control", value: task.priority_task %>
-  </div>
+<div class="form-group">
+  <%= form.label t('task.priority') %>
+  <% task.priority_task = 1 if task.priority_task.nil? %>
+  <%= form.number_field :priority_task, class:"form-control", value: task.priority_task %>
+</div>
 
-  <div class="form-group">
-    <%= form.label t('task.deadline') %>
-    <% I18n.locale = 'en' %>
-    <%= form.datetime_select :deadline_task, class:"form-control" %>
-    <%# I18n.locale = current_user.locale %>
-  </div>
+<div class="form-group">
+  <%= form.label t('task.deadline') %>
+  <% I18n.locale = 'en' %>
+  <%= form.datetime_select :deadline_task, class:"form-control" %>
+  <%# I18n.locale = current_user.locale %>
+</div>
 
-  <div class="actions">
-    <%= form.submit t('task.create'), class:"btn btn-primary" %>
-  </div>
+<div class="actions">
+  <%= form.submit button_text, class:"btn btn-primary" %>
+</div>
 
 <% end %>
-
-

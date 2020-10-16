@@ -21,15 +21,13 @@
 <% end %>
 
 <script type="text/javascript">
-  $(document).ready(function(){
-  //alert('Текст во всплывающем окне');
-      $.ajax({
-        type: "GET",
-        url: '/lists',
-        success: function(data){
-          $(".lists").html(data)
-        }
-      })
+  $(document).ready(function() {
+    $.ajax({
+      type: "GET",
+      url: '/lists',
+      success: function(data) {
+        $(".lists").html(data)
+      }
+    })
   });
 </script>
-

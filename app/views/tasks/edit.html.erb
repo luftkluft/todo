@@ -5,8 +5,8 @@
   </div>
 
   <div class="task-block">
-    <%= render 'form', task: @task, id: params[:id] %>
+    <%= render 'form', task: @task, id: params[:id], button_text: t('task.edit') %>
     <%= link_to t('task.back'), root_path %>
   </div>
-  
+
 </div>
