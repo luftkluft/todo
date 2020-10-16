@@ -5,8 +5,8 @@
   </div>
 
   <div class="list-block">
-    <%= render 'form', list: @list %>
+    <%= render 'form', list: @list, button_text: t('list.edit') %>
     <%= link_to t('list.back'), root_path %>
   </div>
-  
+
 </div>
