@@ -2,6 +2,7 @@ class ListsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user_locale
   before_action :set_list, only: %i[show edit update destroy]
+  before_action :setup_current_user_locale, only: %i[new edit]
   before_action :owner, only: %i[edit update destroy set_list]
   before_action :task_owner, only: [:complete]
   def index
@@ -131,5 +132,11 @@ class ListsController < ApplicationController
     respond_to do |format|
       format.html { render layout: false, notice: I18n.t('sorting.up') }
     end
+  end
+
+  def setup_current_user_locale
+    User.find(current_user.id).update_attribute(:locale, I18n.locale) if current_user.locale.blank?
+  rescue StandardError
+    print "raise 'setup_user_locale'_error"
   end
 end

@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
-  before_action :set_user_locale
   before_action :authenticate_user!, except: %i[index show]
+  before_action :set_user_locale
+  before_action :setup_current_user_locale, only: %i[new edit]
   before_action :owner, only: %i[edit update destroy]
   before_action :set_task, only: %i[show edit update destroy]
   before_action :set_list, only: [:create]
@@ -93,5 +94,11 @@ class TasksController < ApplicationController
     redirect_to root_path, notice: t('info_task.go_pass') if @task.nil?
   rescue StandardError
     redirect_to root_path, notice: t('info_task.go_pass')
+  end
+
+  def setup_current_user_locale
+    User.find(current_user.id).update_attribute(:locale, I18n.locale) if current_user.locale.blank?
+  rescue StandardError
+    print "raise 'setup_user_locale'_error"
   end
 end
