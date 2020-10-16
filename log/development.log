@@ -769,3 +769,84 @@ Processing by ListsController#sorting as */*
 Completed 200 OK in 14ms (Views: 7.9ms | ActiveRecord: 2.4ms)
 
 
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/bin/rake:23
+  [1m[35m (44.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "todo_develop"[0m
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/bin/rake:23
+  [1m[35m (44.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "todo_test"[0m
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/bin/rake:23
+  [1m[35m (107.0ms)[0m  [1m[35mCREATE DATABASE "todo_develop" ENCODING = 'unicode'[0m
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/bin/rake:23
+  [1m[35m (126.6ms)[0m  [1m[35mCREATE DATABASE "todo_test" ENCODING = 'unicode'[0m
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/bin/rake:23
+  [1m[35m (20.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/bin/rake:23
+  [1m[35m (20.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7937111806546768230)[0m
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/bin/rake:23
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/bin/rake:23
+Migrating to DeviseCreateUsers (20180618221357)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/bin/rake:23
+  [1m[35m (16.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "user_inn" integer DEFAULT 0 NOT NULL, "first_name" character varying DEFAULT '' NOT NULL, "last_name" character varying DEFAULT '' NOT NULL, "role" character varying DEFAULT '' NOT NULL, "locale" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying, "last_sign_in_ip" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180618221357_devise_create_users.rb:3
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20180618221357_devise_create_users.rb:44
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20180618221357_devise_create_users.rb:45
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180618221357"]]
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/bin/rake:23
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/bin/rake:23
+Migrating to CreateLists (20180618224325)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/bin/rake:23
+  [1m[35m (16.4ms)[0m  [1m[35mCREATE TABLE "lists" ("id" bigserial primary key, "title_list" character varying, "priority_list" integer, "deadline_list" timestamp, "user_id" bigint, "status" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_d6cf4279f7"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20180618224325_create_lists.rb:3
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX  "index_lists_on_user_id" ON "lists"  ("user_id")[0m
+  ↳ db/migrate/20180618224325_create_lists.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180618224325"]]
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/bin/rake:23
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/bin/rake:23
+Migrating to CreateTasks (20180618224757)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/bin/rake:23
+  [1m[35m (15.8ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" bigserial primary key, "content_task" character varying, "priority_task" integer, "deadline_task" timestamp, "list_id" bigint, "status" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_02b8df67b5"
+FOREIGN KEY ("list_id")
+  REFERENCES "lists" ("id")
+)[0m
+  ↳ db/migrate/20180618224757_create_tasks.rb:3
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE  INDEX  "index_tasks_on_list_id" ON "tasks"  ("list_id")[0m
+  ↳ db/migrate/20180618224757_create_tasks.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180618224757"]]
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/bin/rake:23
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-10-16 22:50:49.147121"], ["updated_at", "2020-10-16 22:50:49.147121"]]
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(7937111806546768230)[0m
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/bin/rake:23

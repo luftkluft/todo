@@ -10,13 +10,6 @@ Rails.application.routes.draw do
         patch 'complete'
       end
     end
-    get '/tasks/new/:id' => 'tasks#new'
-    get '/tasks' => 'tasks#index'
-    post '/tasks' => 'tasks#create'
-    get '/tasks/:id/edit' => 'tasks#edit'
-    patch '/tasks/:id' => 'tasks#update'
-    put '/tasks/:id' => 'tasks#update'
-    delete '/tasks/:id' => 'tasks#destroy'
     resources :tasks
   end
 end
