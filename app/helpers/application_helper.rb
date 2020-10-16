@@ -4,13 +4,11 @@ module ApplicationHelper
     print @users
     begin
       @users.each do |r|
-        if r.role == "superuser"
-          return false
-        end
+        return false if r.role == 'superuser'
       end
-      return true
-    rescue
-      print "error_check_free_superuser"
+      true
+    rescue StandardError
+      print 'error_check_free_superuser'
     end
   end
 end

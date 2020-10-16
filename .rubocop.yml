@@ -1,0 +1,24 @@
+Metrics/LineLength:
+  Max: 120
+
+Documentation:
+  Enabled: false
+
+FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/CyclomaticComplexity:
+  Max: 10
+  
+Metrics/PerceivedComplexity:
+  Max: 10
+
+AllCops:
+  TargetRubyVersion: 2.6.3
+  Exclude:
+    - 'db/**/*'
+    - 'node_modules/**/*'
+    - 'bin/bundle'
