@@ -15,17 +15,30 @@ gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'factory_bot_rails'
+  gem 'database_cleaner'
+  gem 'faker'
+  gem 'fasterer'
+  gem 'pry-rails'
+  gem 'rails-controller-testing'
+  gem 'rb-readline'
+  gem 'rspec-json_expectations'
   gem 'rspec-rails'
-  gem 'rubocop'
-  gem 'selenium-webdriver'
+  gem 'rubocop', require: false
 end
 
 group :development do
+  gem 'capybara', '>= 2.15'
+  gem 'db-query-matchers'
+  gem 'factory_bot_rails'
+  gem 'json_spec'
+  gem 'launchy'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'selenium-webdriver'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'shoulda-matchers'
   gem 'web-console', '>= 3.3.0'
+  gem 'webdrivers'
 end
 
 group :production do
