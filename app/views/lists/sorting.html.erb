@@ -24,9 +24,16 @@
       <th style="width: 0%;">
       </th>
 
+      <% if list.deadline_list < Time.now && list.status != 'completed' %>
+      <th class="table_cell" style="color: red; width: 72%;">
+        <%= list.title_list %><br />
+        deadline: <%= list.deadline_list %>
+      </th>
+      <% else %>
       <th class="table_cell" style="color: #fff; width: 72%;">
         <%= list.title_list %>
       </th>
+      <% end %>
 
       <th class="right_table_cell" style="width: 18%; color: #BBBBBB;">
         <em>
