@@ -112,9 +112,16 @@
 
       <td></td>
 
+      <% if task.deadline_task < Time.now %>
+      <td class="table_cell" style="color: red">
+        <%= task.content_task %><br />
+        deadline: <%= task.deadline_task %>
+      </td>
+      <% else %>
       <td class="table_cell">
         <%= task.content_task %>
       </td>
+      <% end %>
 
       <td class="right_table_cell">
         <em>
