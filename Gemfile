@@ -22,8 +22,10 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'rb-readline'
   gem 'rspec-json_expectations'
+  gem 'rspec_junit_formatter'
   gem 'rspec-rails'
   gem 'rubocop', require: false
+  gem 'simplecov', require: false, group: :test
 end
 
 group :development do
