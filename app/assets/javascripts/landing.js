@@ -1,2 +1,9 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
+$(document).ready(function () {
+  $.ajax({
+    type: "GET",
+    url: '/lists',
+    success: function (data) {
+      $(".lists").html(data)
+    }
+  })
+});
