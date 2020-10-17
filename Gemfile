@@ -34,15 +34,15 @@ group :development do
   gem 'launchy'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'shoulda-matchers'
   gem 'web-console', '>= 3.3.0'
   gem 'webdrivers'
 end
 
 group :production do
-  # gem 'pg'
+  gem 'rails_12factor'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
