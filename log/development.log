@@ -12332,3 +12332,211 @@ Completed 200 OK in 29ms (Views: 17.8ms | ActiveRecord: 4.4ms)
 Completed 200 OK in 29ms (Views: 15.6ms | ActiveRecord: 4.5ms)
 
 
+Started GET "/en" for 127.0.0.1 at 2020-10-18 02:31:14 +0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by LandingController#landing as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/landing_controller.rb:23
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/landing_controller.rb:23
+  Rendering landing/landing.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered landing/landing.html.erb within layouts/application (596.6ms)
+  Rendered layouts/_navigation.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (1.6ms)
+Completed 200 OK in 900ms (Views: 734.4ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/lists" for 127.0.0.1 at 2020-10-18 02:31:15 +0300
+Started GET "/lists" for 127.0.0.1 at 2020-10-18 02:31:15 +0300
+Processing by ListsController#index as */*
+Processing by ListsController#index as */*
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:99
+  ↳ app/controllers/lists_controller.rb:99
+Redirected to http://localhost:3000/sorting
+Redirected to http://localhost:3000/sorting
+Completed 302 Found in 9ms (ActiveRecord: 3.7ms)
+
+
+Completed 302 Found in 7ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/sorting" for 127.0.0.1 at 2020-10-18 02:31:16 +0300
+Started GET "/sorting" for 127.0.0.1 at 2020-10-18 02:31:16 +0300
+Processing by ListsController#sorting as */*
+Processing by ListsController#sorting as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:99
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:99
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT * FROM lists
+                                   ORDER BY created_at ASC;[0m
+  [1m[36mList Load (0.9ms)[0m  [1m[34mSELECT * FROM lists
+                                   ORDER BY created_at ASC;[0m
+  ↳ app/models/list.rb:114
+  ↳ app/models/list.rb:114
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT * FROM tasks ORDER BY status DESC, created_at ASC;[0m
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT * FROM tasks ORDER BY status DESC, created_at ASC;[0m
+  ↳ app/models/list.rb:127
+  ↳ app/models/list.rb:127
+  Rendering lists/sorting.html.erb
+  Rendering lists/sorting.html.erb
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/lists/sorting.html.erb:3
+  ↳ app/views/lists/sorting.html.erb:3
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  ↳ app/controllers/application_controller.rb:5
+  Rendered lists/sorting.html.erb (11.4ms)
+Completed 200 OK in 58ms (Views: 20.1ms | ActiveRecord: 17.1ms)
+
+
+  Rendered lists/sorting.html.erb (18.0ms)
+Completed 200 OK in 59ms (Views: 24.9ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/tasks/new/?id=10" for 127.0.0.1 at 2020-10-18 02:31:24 +0300
+Processing by TasksController#new as HTML
+Started GET "/en" for 127.0.0.1 at 2020-10-18 02:31:24 +0300
+  Parameters: {"id"=>"10"}
+Processing by LandingController#landing as JS
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Parameters: {"locale"=>"en"}
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/landing_controller.rb:23
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:76
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/landing_controller.rb:23
+  Rendering tasks/new.html.erb
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering landing/landing.html.erb within layouts/application
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered tasks/_form.html.erb (8.7ms)
+  ↳ app/controllers/application_controller.rb:5
+  Rendered tasks/new.html.erb (70.7ms)
+Completed 200 OK in 159ms (Views: 108.8ms | ActiveRecord: 38.3ms)
+
+
+  Rendered landing/landing.html.erb within layouts/application (10.1ms)
+  Rendered layouts/_navigation.html.erb (7.2ms)
+  Rendered layouts/_footer.html.erb (2.0ms)
+Completed 200 OK in 293ms (Views: 180.0ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/en/tasks" for 127.0.0.1 at 2020-10-18 02:31:29 +0300
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Jn7n76yCROarz/ISc4z/ULuAhg+2ChZdGHiPgvIBAVIr3ho5ah1eHBOX0xyFt2b+GpjyLJGEt0W7sHggGLAc2A==", "task"=>{"list_id"=>"10", "content_task"=>"Task 1", "status"=>"in_work", "priority_task"=>"1", "deadline_task(1i)"=>"2020", "deadline_task(2i)"=>"11", "deadline_task(3i)"=>"17", "deadline_task(4i)"=>"23", "deadline_task(5i)"=>"31"}, "commit"=>"New Task", "locale"=>"en"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:76
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:69
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."user_id" = $1 AND "lists"."id" = $2 LIMIT $3[0m  [["user_id", 4], ["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:70
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/tasks_controller.rb:27
+  [1m[36mTask Create (1.1ms)[0m  [1m[32mINSERT INTO "tasks" ("content_task", "priority_task", "deadline_task", "list_id", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["content_task", "Task 1"], ["priority_task", 1], ["deadline_task", "2020-11-17 23:31:00"], ["list_id", 10], ["status", "in_work"], ["created_at", "2020-10-17 23:31:29.910009"], ["updated_at", "2020-10-17 23:31:29.910009"]]
+  ↳ app/controllers/tasks_controller.rb:27
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/tasks_controller.rb:27
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+Redirected to http://localhost:3000/en
+Completed 302 Found in 19ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/en" for 127.0.0.1 at 2020-10-18 02:31:29 +0300
+Processing by LandingController#landing as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/landing_controller.rb:23
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/landing_controller.rb:23
+  Rendering landing/landing.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered landing/landing.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_navigation.html.erb (3.9ms)
+  Rendered layouts/_footer.html.erb (1.8ms)
+Completed 200 OK in 96ms (Views: 89.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/lists" for 127.0.0.1 at 2020-10-18 02:31:30 +0300
+Started GET "/lists" for 127.0.0.1 at 2020-10-18 02:31:30 +0300
+Processing by ListsController#index as */*
+Processing by ListsController#index as */*
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:99
+Redirected to http://localhost:3000/sorting
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 302 Found in 7ms (ActiveRecord: 1.6ms)
+
+
+  ↳ app/controllers/lists_controller.rb:99
+Redirected to http://localhost:3000/sorting
+Completed 302 Found in 7ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/sorting" for 127.0.0.1 at 2020-10-18 02:31:30 +0300
+Started GET "/sorting" for 127.0.0.1 at 2020-10-18 02:31:30 +0300
+Processing by ListsController#sorting as */*
+Processing by ListsController#sorting as */*
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/user/.rvm/gems/ruby-2.4.1@todo/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:99
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT * FROM lists
+                                   ORDER BY created_at ASC;[0m
+  ↳ app/controllers/lists_controller.rb:99
+  ↳ app/models/list.rb:114
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT * FROM lists
+                                   ORDER BY created_at ASC;[0m
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT * FROM tasks ORDER BY status DESC, created_at ASC;[0m
+  ↳ app/models/list.rb:114
+  ↳ app/models/list.rb:127
+  [1m[36mTask Load (3.6ms)[0m  [1m[34mSELECT * FROM tasks ORDER BY status DESC, created_at ASC;[0m
+  Rendering lists/sorting.html.erb
+  ↳ app/models/list.rb:127
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 4]]
+  Rendering lists/sorting.html.erb
+  ↳ app/views/lists/sorting.html.erb:3
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/application_controller.rb:5
+  ↳ app/views/lists/sorting.html.erb:3
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered lists/sorting.html.erb (13.3ms)
+  ↳ app/controllers/application_controller.rb:5
+Completed 200 OK in 26ms (Views: 14.4ms | ActiveRecord: 5.4ms)
+
+
+  Rendered lists/sorting.html.erb (10.5ms)
+Completed 200 OK in 30ms (Views: 14.1ms | ActiveRecord: 5.8ms)
+
+
