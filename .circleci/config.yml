@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-       - image: circleci/ruby:2.5.3-node-browsers-legacy
+       - image: circleci/ruby:2.4.1-node-browsers-legacy
          environment:
            - RAILS_ENV=test
            - DATABASE_URL=postgres://user@localhost:5432/todo_test
