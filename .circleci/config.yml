@@ -9,7 +9,7 @@ jobs:
            - DATABASE_URL=postgres://user@localhost:5432/todo_test
        - image: circleci/postgres:11
          environment:
-           - POSTGRES_USER=user
+           - POSTGRES_HOST_AUTH_METHOD=trust
            - POSTGRES_DB=todo_test
 
     working_directory: ~/repo
