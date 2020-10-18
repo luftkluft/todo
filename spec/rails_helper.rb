@@ -6,6 +6,8 @@ require 'rspec/rails'
 require 'shoulda/matchers'
 require 'database_cleaner'
 require 'factory_bot_rails'
+require 'capybara/rspec'
+require 'selenium-webdriver'
 
 begin
   ActiveRecord::Migration.maintain_test_schema!
