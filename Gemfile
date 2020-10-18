@@ -15,6 +15,7 @@ gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'capybara', '>= 2.15'
   gem 'database_cleaner'
   gem 'faker'
   gem 'fasterer'
@@ -25,18 +26,17 @@ group :development, :test do
   gem 'rspec_junit_formatter'
   gem 'rspec-rails'
   gem 'rubocop', require: false
+  gem 'selenium-webdriver'
+  gem 'shoulda-matchers'
   gem 'simplecov', require: false, group: :test
 end
 
 group :development do
-  gem 'capybara', '>= 2.15'
   gem 'db-query-matchers'
   gem 'factory_bot_rails'
   gem 'json_spec'
   gem 'launchy'
   gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'selenium-webdriver'
-  gem 'shoulda-matchers'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
