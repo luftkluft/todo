@@ -3,7 +3,6 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/luftkluft/todo_test_task)
 ![GitHub last commit](https://img.shields.io/github/last-commit/luftkluft/todo_test_task)
 [![Build Status](https://circleci.com/gh/luftkluft/plantik.svg?branch=master)](https://circleci.com/gh/luftkluft/todo_test_task)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/luftkluft/plantik)
 
 Version 5.0 09/10/2020
 --------------------------------------------------------------
