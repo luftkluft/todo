@@ -49,6 +49,12 @@ jobs:
                 sudo apt-get update
                 sudo apt-get install google-chrome-stable
           - run:
+              name: Install Gecodriver
+              command: |
+                wget https://github.com/mozilla/geckodriver/releases/download/v0.27.0/geckodriver-v0.27.0-linux64.tar.gz
+                tar -zxvf geckodriver-v0.27.0-linux64.tar.gz
+                sudo mv geckodriver /usr/local/bin/
+          - run:
               name: run tests
               command: |
                 mkdir /tmp/test-results
