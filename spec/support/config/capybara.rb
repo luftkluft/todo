@@ -9,6 +9,7 @@ RSpec.configure do |config|
     Capybara.current_driver = JS_DRIVER if example.metadata[:js]
     Capybara.current_driver = :selenium if example.metadata[:selenium]
     Capybara.current_driver = :selenium_chrome if example.metadata[:selenium_chrome]
+    Capybara.ignore_hidden_elements = false
   end
 
   config.after(:each) do
