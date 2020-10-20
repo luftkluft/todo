@@ -25,13 +25,18 @@
       </th>
 
       <% if list.deadline_list < Time.now && list.status != 'completed' %>
-      <th class="table_cell" style="color: red; width: 72%;">
+      <th class="table_cell" style="color: red; width: 60%;">
         <%= list.title_list %><br />
-        deadline: <%= list.deadline_list %>
+      </th>
+      <th class="table_cell" style="color: red; width: 12%;">
+        <%= t('list.deadline') %> <%= list.deadline_list.to_s[0...10] %>
       </th>
       <% else %>
-      <th class="table_cell" style="color: #fff; width: 72%;">
+      <th class="table_cell" style="color: #fff; width: 60%;">
         <%= list.title_list %>
+      </th>
+      <th class="table_cell" style="color: #fff; width: 12%;">
+        <%= t('list.deadline') %> <%= list.deadline_list.to_s[0...10] %>
       </th>
       <% end %>
 
@@ -59,7 +64,7 @@
 
       <td></td>
 
-      <td colspan="2" ;>
+      <td colspan="3" ;>
         <div class="input-group" style="width: 99%; padding: 8px">
           <input id="<%= list.id %>" type="text" class="form-control" placeholder="<%= t('info_list.type') %>">
           <span class="input-group-btn">
@@ -91,6 +96,9 @@
           <%= task.content_task %>
         </del>
       </td>
+      <td class="table_cell" style="color: #BBBBBB">
+        <%= task.deadline_task.to_s[0...10] %>
+      </td>
 
       <td class="right_table_cell">
         <em>
@@ -115,11 +123,16 @@
       <% if task.deadline_task < Time.now %>
       <td class="table_cell" style="color: red">
         <%= task.content_task %><br />
-        deadline: <%= task.deadline_task %>
+      </td>
+      <td class="table_cell" style="color: red">
+        <%= task.deadline_task.to_s[0...10] %>
       </td>
       <% else %>
       <td class="table_cell">
         <%= task.content_task %>
+      </td>
+      <td class="table_cell">
+        <%= task.deadline_task.to_s[0...10] %>
       </td>
       <% end %>
 
