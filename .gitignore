@@ -30,3 +30,6 @@
 /config/master.key
 
 /coverage/*
+
+# Ignore fuse files
+.fuse_*
