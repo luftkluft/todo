@@ -7,8 +7,6 @@ function searchNav() {
   var str3 = $('#nav_tasks').text();
   str3 = str3.split(' ').join('');
 
-  //alert('status='+str1+'lists='+str2+'tasks='+str3);
-
   $.ajax({
     cache: false,
     url: "/sorting",

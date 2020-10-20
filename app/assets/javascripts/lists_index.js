@@ -29,7 +29,6 @@ function editList(id) {
 
 function addTask(id) {
   var taskText = document.getElementById(id);
-  //alert(taskText.value);
   $.ajax({
 
     type: "GET",
@@ -46,7 +45,6 @@ function addTask(id) {
 }
 
 function editTask(id) {
-  //alert(id);
   $.ajax({
 
     type: "GET",

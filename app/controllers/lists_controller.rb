@@ -6,10 +6,7 @@ class ListsController < ApplicationController
   before_action :owner, only: %i[edit update destroy set_list]
   before_action :task_owner, only: [:complete]
   def index
-    # @lists = current_user.lists
-    # @lists = List.all
     redirect_to '/sorting'
-    # render layout: false
   end
 
   def sorting

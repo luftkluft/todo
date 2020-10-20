@@ -4,7 +4,7 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/luftkluft/todo_test_task)
 [![Build Status](https://circleci.com/gh/luftkluft/plantik.svg?branch=master)](https://circleci.com/gh/luftkluft/todo_test_task)
 
-Version 5.0 09/10/2020
+Version 5.1 20/10/2020
 --------------------------------------------------------------
 
 What is it?

@@ -123,7 +123,6 @@ class List < ApplicationRecord
   end
 
   def self.sorttasks
-    # @tasks = Task.find_by_sql("SELECT * FROM tasks ORDER BY #{@tk}, status DESC;")
     @tasks = Task.find_by_sql("SELECT * FROM tasks ORDER BY status DESC, #{@tk};")
   rescue StandardError
     puts 'sorting_task_error'
